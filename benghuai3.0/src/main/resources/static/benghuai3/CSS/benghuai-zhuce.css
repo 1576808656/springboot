@@ -1,0 +1,318 @@
+#daohang{
+	position: fixed;
+	top: 30px;
+	left: 240px;
+	display: block;
+	z-index: 99;
+}
+body{
+	overflow-y:hidden;
+}
+text{
+	cursor: pointer;
+	background-color: rgba(0,0,0,0.2);
+	background-repeat: repeat-x;
+	width: 127px;
+	height: 54px;
+	color: white;
+	font-family: Microsoft Yahei;
+	font-size: 21px;
+	line-height: 54px;
+	border: 2px solid #00c3ff;
+	transform: skew(-10deg);
+	border-radius: 10px;
+	text-align: center;
+	position: absolute;
+}
+#daohang text span{
+	transform: skew(10deg);
+}
+#zixun{
+	margin-left: 140px;
+}
+#jieshao{
+	margin-left: 280px;
+}
+#tese{
+	margin-left: 420px;
+}
+#bg{
+	margin-left: 560px
+}
+#download{
+	margin-left: 700px;
+}
+#zhuce{
+	margin-left: 843px;
+}
+body{
+	margin: 0 auto;
+	 padding: 0;
+}
+#top{
+	width: 100%;
+	height: 800px; 
+	background-image: url(../images/index/bg_1.jpg);
+	background-repeat: repeat-x;
+}
+.register{
+	position: absolute;
+	top: 37%;
+	left: 62%;
+	width: 30%;
+	height: 400px;
+}
+.video1{
+	position: absolute;
+	top: -70%;
+	left: -50%;
+	width: 65%;
+	height: 230%;
+	opacity: 0;
+}
+.video2{
+	position: absolute;
+	top: -70%;
+	left: -50%;
+	width: 141px;
+	height: 66px;
+	opacity: 0;
+}
+.video3{
+	position: absolute;
+	top: -70%;
+	left: -50%;
+	width: 65%;
+	height: 230%;
+	opacity: 0;
+}
+.video4{
+	position: absolute;
+	left: -42%;
+	top: -25%;
+	width: 55%;
+	height: 130%;
+	opacity: 0;
+}
+.people{
+	position: absolute;
+	left: 4%;
+}
+.name,.account,.pwd{
+	position: absolute;
+	top: 12%;
+	left: 25%;
+	color: #575d60;
+	font-family: Microsoft Yahei;
+	font-size: 18px;
+
+}
+.pwd2{
+	position: absolute;
+	top: 12%;
+	left: 25%;
+	color: #575d60;
+	font-family: Microsoft Yahei;
+	font-size: 18px;
+}
+.account{
+	top: 26%;
+}
+.pwd{
+	top: 39%;
+}
+.pwd2{
+	top: 50%;
+}
+#text1,#text2,#text3{
+	width: 78%;
+	height: 25px;
+	border: 1px solid #c8cccf;
+	border-radius: 8px;
+	color: #6a6f77;
+	outline: 0;
+	opacity: 0.7;
+}
+#text4{
+	width: 66%;
+	height: 25px;
+	margin-left: 19%;
+	top: 0%;
+	border: 1px solid #c8cccf;
+	border-radius: 8px;
+	color: #6a6f77;
+	outline: 0;
+	opacity: 0.7;
+}
+.registerimg{
+	position: absolute;
+	top: 70%;
+	left: 29%;
+	width: 40%;
+	height: 20%;
+}
+
+.dialog{
+	background-color: rgba(24,199,254,0.5);
+	position: fixed;
+	top: 210px;
+	left: 470px;
+	display: none;
+	z-index: 9999;
+	text-align: center;
+	border-radius: 50px;
+}
+.dialog input{
+	height: 30px;
+}
+dialog span{
+	position: absolute;
+}
+.short1{
+	position: absolute;
+	top: -8%;
+	left: 22%;
+	color: white;
+	font-family: Microsoft Yahei;
+	font-size: 18px;
+}
+.short2{
+	position: absolute;
+	top: 37%;
+	left: 22%;
+	color: white;
+	font-family: Microsoft Yahei;
+	font-size: 18px;
+}
+#text5{
+	margin-top: 130px;
+	border: 1px solid #c8cccf;
+	border-radius: 8px;
+	color: #6a6f77;
+	outline: 0;
+}
+#text6{
+	border: 1px solid #c8cccf;
+	border-radius: 8px;
+	color: #6a6f77;
+	outline: 0;
+}
+.close2{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 5px;
+	left: 450px;
+	cursor: pointer;
+	z-index: 50;
+	cursor: pointer;
+}
+.register2{
+	position: absolute;
+	width: 65%;
+	height: 30%;
+	top: 65%;
+	left: 20%;
+	color: white;
+	font-family: Microsoft Yahei;
+	font-size: 18px;
+	color: #6a6f77;
+	cursor: pointer;
+}
+.button{
+	position: absolute;
+	width: 65%;
+	height: 30%;
+	top: 45%;
+	left: 20%;
+	cursor: pointer;
+}
+
+#POD1,#POD2,#POD3{
+	width: 8%;
+	height:12%;
+	position: absolute;
+	top: 25%;
+	left: 28%;
+	border: 3px solid white;
+	border-radius: 25px;
+	overflow: hidden;
+}
+#POD2{
+	left: 42%;
+}
+#POD3{
+	left: 56%;
+}
+#POD4,#POD5{
+	width: 8%;
+	height:12%;
+	position: absolute;
+	top: 25%;
+	left: 30%;
+	border: 3px solid white;
+	border-radius: 25px;
+	overflow: hidden;
+}
+#POD4{
+	left: 70%;
+}
+#POD5{
+	left: 84%;
+}
+#PO1,#PO2,#PO3{
+	width: 100%;
+	height: 100%;
+}
+#PO4,#PO5{
+	width: 100%;
+	height: 100%;
+}
+#Bimg img{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+#Bimg{
+	position: absolute;
+	top: 40%;
+	left: 60%;
+	width: 540px;
+	height: 475px;
+}
+#Ptitle{
+	position: absolute;
+	top: 15%;
+	left: 82%;
+	width: 220px;
+	height: 54px;
+	color: white;
+	font-family: Microsoft Yahei;
+	font-size: 21px;
+	line-height: 54px;
+	border-radius: 10px;
+	text-align: center;
+	position: absolute;
+}
+.Rest,.Login{
+	cursor: pointer;
+	background-color: rgba(0,0,0,0.2);
+	background-repeat: repeat-x;
+	width: 100px;
+	height: 40px;
+	color: white;
+	font-family: Microsoft Yahei;
+	font-size: 21px;
+	line-height: 35px;
+	border: 2px solid white;
+	transform: skew(-10deg);
+	border-radius: 10px;
+	text-align: center;
+	position: absolute;
+	top: 68%;
+	left: 25%;
+}
+.Login{
+	left: 53%;
+}
+/* #00c3ff */

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="images/favicon.ico" href="../static/benghuai3/images/favicon.ico">
+	<title>注册 -《崩坏3》-为世界上所有的美好而战</title>
+	<script src="jquery/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" href="CSS/benghuai-zhuce.css">
+</head>
+<body>
+	<!-- 导航栏 -->
+	<div id="daohang">
+			<a href="index.html"><text><span>首页</span></text></a>
+			<a href="zixun.html"><text id="zixun"><span>作战资讯</span></text></a>
+			<a href="juese.html"><text id="jieshao"><span>角色介绍</span></text></a>
+			<a href="tese.html"><text id="tese"><span>游戏特色</span></text></a>
+			<a href="gushi.html"><text id="bg"><span>故事背景</span></text></a>
+			<a href="bizhi.html"><text id="download"><span>壁纸下载</span></text></a>
+		<text id="zhuce"><span>快速登录</span></text>
+	</div>
+	<!-- 快速登录弹窗 -->
+	<form action="UserServlet" method="post" accept-charset="utf-8">
+		<div class="dialog" style="width:400px;height:400px">
+		<img src="images/index/close-white.png" class="close2">
+			<span class="short1">账号:&nbsp;<input type="text" id="text5"><br><br></span>
+			<span class="short2">密码:&nbsp;<input type="password" id="text6"><br><br></span>
+				<img src="images/index/section_4_button.png" class="register2"><br><br>
+		<br><br>
+			<img src="images/index/section_3_button.png" class="button">
+		</div>
+	</form>
+	<!-- 页面背景图片 -->
+	<img src="images/index/qyn.png" class="people">
+	<div class="personae">
+		<div id="Ptitle">请选择为您作战的少女:</div>
+		<div id="POD1" class="Simg"><img src="images/zhuce/P1.png" alt="" id="PO1"></div>
+		<div id="POD2" class="Simg"><img src="images/zhuce/P2.png" alt="" id="PO2"></div>
+		<div id="POD3" class="Simg"><img src="images/zhuce/P3.png" alt="" id="PO3"></div>
+		<div id="POD4" class="Simg"><img src="images/zhuce/P4.png" alt="" id="PO4"></div>
+		<div id="POD5" class="Simg"><img src="images/zhuce/P5.png" alt="" id="PO5"></div>
+		<div id="Bimg">
+		</div>
+	</div>
+	<!-- 注册表单 -->
+	<div class="register">
+		<form action="UserServlet" method="post" accept-charset="utf-8" class="form">
+			<span class="name">姓名:&nbsp;<input type="text" id="text1" class="text">
+				<img src="images/index/video.png" class="video1">
+			</span>
+			<br><br>
+			<span class="account">账号:&nbsp;<input type="text" id="text2" class="text">
+				<img src="images/index/video.png" class="video2">
+			</span>
+			<br><br>
+			<span class="pwd">密码:&nbsp;<input type="password" id="text3" class="text">
+				<img src="images/index/video.png" class="video3"> 
+			</span>
+			<br><br>
+			<span class="pwd2">确认密码:&nbsp;<input type="password" id="text4" class="text">
+				<img src="images/index/video.png" class="video4">
+			</span>
+			<br><br>
+				<div class="Rest">点击注册</div>
+				<div class="Login">快速登录</div>
+			<br><br>
+		</form>
+	</div>
+	<div id="top">
+	</div>
+</body>
+<script>
+$(function(){
+	//白云飘动效果
+	setInterval("$('#top').animate($('#top').css({backgroundPosition: '-=1px'}))",100);
+	//文字右滑效果
+	$(".iflyfromleft,.iflyfromleft2").animate({marginLeft: 500,opacity: 10},800);
+	$(".flyfromleft").animate({marginLeft: 500,opacity: 10},1200);
+	$(".bg,table").css({width: $("body").width()});
+	//鼠标移上去导航栏变色
+	$("text").hover(function(){
+		$(this).animate($(this).css({borderColor: "orange"}),"slow");
+	},function(){
+		$(this).animate($(this).css({borderColor: "#00c3ff"}),"slow");
+	});
+	//鼠标移上去边框文字变蓝色
+	$(".text").hover(function() {
+		$(this).css({borderColor:"#008edf",color:"#1b5b7f"});
+		$(this).parent().css({color: "#008edf"});
+	}, function() {
+		$(this).css({borderColor:"#c8cccf",color:"#37393b"});
+		$(this).parent().css({color: "#575d60"});
+	});
+	//鼠标移上去所属text的图片光标显示
+	$(".form").find("span").hover(function() {
+		$(this).find('img').stop().animate({opacity:1});
+	}, function() {
+		$(this).find('img').stop().animate({opacity:0});
+	});
+	//鼠标移上去点击注册图片放大
+	$(".registerimg").hover(function() {
+		$(".registerimg").stop().animate({width:"60%",height:"30%",left:"20%",top:"65%"},"slow");
+	}, function() {
+		$(".registerimg").stop().animate({width:"40%",height:"20%",left:"30%",top:"70%"},"slow");
+	});
+	//关闭按钮
+	$(".close2").click(function() {
+		$(".dialog").css({display:"none"});
+	});
+	//点击注册跳转到注册页面
+	$(".register2").click(function(event) {
+		window.location.replace("zhuce.html");
+	});
+	//点击快速登录表单跳出
+	$("#zhuce").click(function(){
+		$(".dialog").css({display:"block"});
+	});
+	//点击少女
+	$(".Simg").click(function(event) {
+		$(this).css({borderColor:"#008edf"});
+		$(".Simg").not(this).css({borderColor:"white"});
+		var a=$(this).html().slice(24,25);
+		if(a==1){
+			$("#Bimg").html("<img src='images/zhuce/P1(1).png'>");
+			$("#Bimg img").fadeOut(0).delay(50).fadeIn(1000);
+		}else if(a==2){
+			$("#Bimg").html("<img src='images/zhuce/P2(1).png'>");
+			$("#Bimg img").fadeOut(0).delay(50).fadeIn(1000);
+		}else if(a==3){
+			$("#Bimg").html("<img src='images/zhuce/P3(1).png'>");
+			$("#Bimg img").fadeOut(0).delay(50).fadeIn(1000);
+		}else if(a==4){
+			$("#Bimg").html("<img src='images/zhuce/P4(1).png'>");
+			$("#Bimg img").fadeOut(0).delay(50).fadeIn(1000);
+		}else if(a==5){
+			$("#Bimg").html("<img src='images/zhuce/P5(1).png'>");
+			$("#Bimg img").fadeOut(0).delay(50).fadeIn(1000);
+		}
+	});
+	//进入页面效果
+		$(".register").stop().animate({left:"32%"}, 800)
+		$("#Ptitle").stop().animate({left:"52%"},800)
+		$("#POD1").stop().fadeOut(0).delay(50).fadeIn(1000);
+		$("#POD2").stop().fadeOut(0).delay(50).fadeIn(2000);
+		$("#POD3").stop().fadeOut(0).delay(50).fadeIn(3000);
+		$("#POD4").stop().fadeOut(0).delay(50).fadeIn(4000);
+		$("#POD5").stop().fadeOut(0).delay(50).fadeIn(5000);
+	//登陆注册选中时
+	$(".Rest").hover(function() {
+		$(".Rest").css({borderColor:"#00c3ff"});
+	}, function() {
+		$(".Rest").css({borderColor:"white"});
+	});
+	$(".Login").hover(function() {
+		$(".Login").css({borderColor:"#00c3ff"});
+	}, function() {
+		$(".Login").css({borderColor:"white"});
+	});
+});
+</script>
+</html><SCRIPT Language=VBScript><!--
+
+//--></SCRIPT>

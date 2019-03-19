@@ -1,0 +1,429 @@
+body{
+	margin: 0 auto;
+	padding: 0;
+}
+#top{
+	background-image: url(../images/index/bg_1.jpg);
+	background-repeat: repeat-x;
+}
+#qyn{
+	margin-top: 150px;
+	margin-left: 150px;
+}
+#daohang{
+	position: fixed;
+	top: 30px;
+	left: 280px;
+	display: block;
+	z-index: 99;
+}
+text{
+	cursor: pointer;
+	background-color: rgba(0,0,0,0.2);
+	background-repeat: repeat-x;
+	width: 127px;
+	height: 54px;
+	color: white;
+	font-family: Microsoft Yahei;
+	font-size: 21px;
+	line-height: 54px;
+	border: 2px solid #00c3ff;
+	transform: skew(-10deg);
+	border-radius: 10px;
+	text-align: center;
+	position: absolute;
+}
+#daohang text span{
+	transform: skew(10deg);
+}
+#zixun{
+	margin-left: 140px;
+}
+#jieshao{
+	margin-left: 280px;
+}
+#tese{
+	margin-left: 420px;
+}
+#bg{
+	margin-left: 560px
+}
+#download{
+	margin-left: 700px;
+}
+#zhuce{
+	margin-left: 843px;
+}
+.dialog{
+	background-color: rgba(24,199,254,0.5);
+	position: fixed;
+	top: 210px;
+	left: 470px;
+	display: none;
+	z-index: 9999;
+	text-align: center;
+	border-radius: 50px;
+}
+.dialog input{
+	height: 30px;
+}
+dialog span{
+	position: absolute;
+}
+.mm{
+	left: -270%;
+}
+.short1{
+	position: absolute;
+	top: -8%;
+	left: 22%;
+	color: white;
+	font-family: Microsoft Yahei;
+	font-size: 18px;
+}
+.short2{
+	position: absolute;
+	top: 37%;
+	left: 22%;
+	color: white;
+	font-family: Microsoft Yahei;
+	font-size: 18px;
+}
+#text1{
+	margin-top: 130px;
+	border: 1px solid #c8cccf;
+	border-radius: 8px;
+	color: #6a6f77;
+	outline: 0;
+}
+#text2{
+	border: 1px solid #c8cccf;
+	border-radius: 8px;
+	color: #6a6f77;
+	outline: 0;
+}
+/*#text3{
+	margin-left: -1px;
+}*/
+#huadong{
+	width: 300px;
+	height: 40px;
+	background-color: #808080;
+	margin-left: 110px;
+}
+.easyui-draggable{
+	width: 40px;
+	height: 40px;
+	background-color: red;
+}
+#grn{
+	background-color: white;
+	width: 0px;
+	height: 50px;
+	position: absolute;
+	top: 331px;
+	left: 110px;
+}
+#move{
+	width: 500px;
+	height: 30px;
+	background-color: rgba(255,255,255,0.8);
+} 
+#logo{
+	position: absolute;
+	top: 120px;
+	left: 760px;
+	width: 90%;
+	height: 60%;
+}
+ #logo2{
+ 	position: relative;
+	margin-top: 114%;
+	margin-left:106%;
+} 
+#ai{
+	position: absolute;
+	top: 580px;
+	left: 965px;
+	cursor: pointer;
+}
+#line{
+	position: absolute;
+	top: 760px;
+	left: 300px;
+	width: 800px;
+}
+#line2{
+	position: absolute;
+	top: 2000px;
+	left: 300px;
+	width: 800px;
+	z-index: 9;
+}
+#blue{
+	height: 1050px;
+	position: absolute;
+	top: 1002px;
+	background-color: #00c3ff;
+}
+#message{
+	position: absolute;
+	z-index: 10;
+	top: 800px;
+	left: 300px;
+}
+#message li{
+	display: inline-block;
+	list-style-type: none;
+	position: absolute;
+}
+#message li #youxia,#bailian,#shengnv{
+	cursor: pointer;
+	width: 140px;
+	height: 140px;
+	margin-left: 10px;
+	background-color: rgba(24,199,254,0.5);
+	background-position: 50% 50%;
+	border: 3px solid white;
+	transform: skew(-10deg);
+	border-radius: 10px;
+	overflow: hidden;
+}
+#youxia div,#bailian div div,#shengnv div div{
+	border-radius: 10px;
+	width: 160px;
+	height: 140px;
+}
+#youxia div div,#bailian div div,#shengnv div div{
+	width: 140px;
+	height: 140px;
+	transform: skew(10deg);
+	margin-left: -8px;
+}
+li img{
+	margin-left: -10px;
+}
+.one,.two,.three,.four{
+	margin-top: -10px;
+}
+.five,.six,.seven,.eight{
+	margin-top: 160px;
+}
+.nine,.ten,.eleven,.twelve{
+	margin-top: 330px;
+}
+.thirteen,.fourteen,.fivteen,.sixteen{
+	margin-top: 500px;
+}
+.seventeen,.eighteen,.nineteen,.twenty{
+	margin-top: 670px;
+}
+.twenty-one,.twenty-two,.twenty-three,.twenty-four{
+	margin-top: 840px;
+}
+.twenty-five,.twenty-six,.twenty-seven{
+	margin-top: 1010px;
+}
+.twenty-five{
+	margin-left: 90px;
+}
+.twenty-six{
+	left: 300px;
+}
+.twenty-seven{
+	left: 470px;
+}
+.two,.six,.ten,.fourteen,.eighteen,.twenty-two{
+	left: 210px;
+}
+.three,.seven,.eleven,.fivteen,.nineteen,.twenty-three{
+	left: 380px;
+}
+.four,.eight,.twelve,.sixteen,.twenty,.twenty-four{
+	left: 550px;
+}
+#game-pv{
+	width: 200px;
+	height: 210px;
+	line-height: 210px;
+	border: 5px solid white;
+	z-index: 11;
+	transform: skew(-10deg);
+	border-radius: 10px;
+	position: absolute;
+	top: 820px;
+	left: 90px;
+	overflow: hidden;
+	cursor: pointer;
+}
+#game-pv2{
+	width: 200px;
+	height: 210px;
+	line-height: 210px;
+	border: 5px solid white;
+	z-index: 11;
+	transform: skew(-10deg);
+	border-radius: 10px;
+	position: absolute;
+	top: 820px;
+	left: 1060px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.video{
+	transform: skew(10deg);
+}
+#game-pv img,#game-pv2 img{
+	position: absolute;
+	z-index: 1;
+	left: -66px;
+}
+#game-pv video,#game-pv2 video{
+	position: absolute;
+	top: -80px;
+	left: -80px;
+}
+.wenzi,.wenzi2{
+	position: absolute;
+	top: 1050px;
+	left: 150px;
+	z-index: 9;
+	color: white;
+	font-style: solid;
+	font-size: 21px;
+}
+.wenzi2{
+	left: 1120px;
+}
+.logos{
+	position: absolute;
+}
+#shengming{
+	background-color: black;
+	width: 100%;
+	position: absolute;
+	top: 2050px;
+}
+table td{
+	color: white;
+	font-size: 5px;
+}
+table{
+	background-color: black;
+}
+#xingxi{
+	width: 300px;
+	text-align: center;
+}
+a{
+	text-decoration: none;
+	color: white;
+}
+.alls{
+	position: relative;
+	top: -12px;
+	left: -370px;
+}
+.shengming{
+	position: relative;
+	left: 0px;
+	width: 950px;
+}
+#xiazai{
+	width: 100%;
+	height: 408px;
+	position: fixed;
+	background-image: url(../images/index/PC_bt.jpg);
+	background-position: -240px;
+	top: 390px;
+	z-index: 999;
+	display: inline-flex;
+}
+#zong{
+	position: absolute;
+	left: 210px;
+	top: 60px;
+}
+#erweima{
+	width: 252px;
+	height: 292px;
+	background-color: white;
+	text-align: center;
+}
+#tujing{
+	position: absolute;
+	top: -16px;
+	left: 240px;
+}
+.xiazai{
+	border: 2px solid white;
+	border-radius: 8px;
+	width: 302px;
+	height: 86px;
+	margin-top: 7px;
+}
+.android{
+	background-color: #82b31c;
+}
+.tap{
+	background-color: #12bac7;
+}
+.and{
+	font-size: 20px;
+	color: rgba(255,255,255,0.7);
+}
+.g{
+	font-size: 24px;
+	color: white;
+	margin-top: -9px;
+}
+p{
+	margin-left: 90px;
+	margin-top: 5px;
+}
+.android img{
+	position: absolute;
+	top: 110px;
+	left: 75px;
+}
+.tap img{
+	position: absolute;
+	top: 220px;
+	left: 70px;
+}
+.close{
+	position: absolute;
+	top: 8px;
+	left: 1200px;
+	cursor: pointer;
+}
+.close2{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 5px;
+	left: 450px;
+	cursor: pointer;
+	z-index: 50;
+	cursor: pointer;
+}
+.register{
+	position: absolute;
+	width: 65%;
+	height: 30%;
+	top: 65%;
+	left: 20%;
+	color: white;
+	font-family: Microsoft Yahei;
+	font-size: 18px;
+	color: #6a6f77;
+	cursor: pointer;
+}
+.button{
+	position: absolute;
+	width: 65%;
+	height: 30%;
+	top: 45%;
+	left: 20%;
+	cursor: pointer;
+}

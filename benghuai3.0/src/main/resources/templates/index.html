@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>主页</title>
+	<script src="easyui/jquery.min.js"></script>
+	<script src="easyui/jquery.easyui.min.js"></script>
+	<link rel="stylesheet" href="easyui/themes/default/easyui.css">
+	<link rel="stylesheet" href="benghuai3/CSS/benghuai-index.css">
+	<!--<script src="easyui/easyloader.js"></script>-->
+	<link rel="stylesheet" href="easyui/themes/icon.css">
+	<link rel="shortcut icon" href="../static/benghuai3/images/favicon.ico">
+</head>
+<body>
+<!-- 快速登录表单 -->
+<form action="UserServlet" method="post" accept-charset="utf-8">
+	<div class="dialog" style="width:400px;height:400px">
+	<img src="benghuai3/images/index/close-white.png" class="close2">
+		<span class="short1">账号:&nbsp;<input type="text" id="text1"><br><br></span>
+		<span class="short2">密码:&nbsp;<input type="password" id="text2"><br><br></span>
+			<img src="benghuai3/images/index/section_4_button.png" class="register"><br><br>
+	<br><br>
+		<img src="benghuai3/images/index/section_3_button.png" class="button">
+	</div>
+</form>
+	<!-- 二维码下载界面 -->
+	<div id="main">
+		<div id="xiazai">
+			<img src="benghuai3/images/index/close-white.png" class="close">
+			<div id="zong">
+				<div id="erweima">
+					<img src="benghuai3/images/index/erweima.png" width="252px" height="252px">
+					扫描下载游戏
+				</div>
+				<ul id="tujing">
+					<li>
+						<a href="">
+							&nbsp;&nbsp;<img src="benghuai3/images/index/iosDownload.png" width="306px" height="90px">
+						</a>
+					</li>
+					<li class="xiazai android">
+						<a href="">
+							<p class="and">Android版</p>
+							<p class="g">通过官网下载</p>
+							<img src="benghuai3/images/index/icon-android.png" width="50px" height="68px">
+						</a>
+					</li>
+					<li class="xiazai tap">
+						<a href="">
+							<p class="and">Android版</p>
+							<p class="g">通过TapTap下载</p>
+							<img src="benghuai3/images/index/icon-tap.png" width="65px" height="50px">
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 导航栏 -->
+		<div id="top">
+			<div id="daohang">
+			<a href="index.html"><text><span>首页</span></text></a>
+			<a href="zixun.html"><text id="zixun"><span>作战资讯</span></text></a>
+			<a href="juese.html"><text id="jieshao"><span>角色介绍</span></text></a>
+			<a href="tese.html"><text id="tese"><span>游戏特色</span></text></a>
+			<a href="gushi.html"><text id="bg"><span>故事背景</span></text></a>
+			<a href="bizhi.html"><text id="download"><span>壁纸下载</span></text></a>
+<!-- 				<text id="zhuce"><span>快速登录</span></text> -->
+			</div>
+			<div class="logos">
+				<img src="benghuai3/images/index/logo.png" id="logo">
+				<img src="benghuai3/images/index/logo2.png" id="logo2">
+			</div>
+			<img src="benghuai3/images/index/aijiang.png" id="ai">
+			<img src="benghuai3/images/index/qyn.png" id="qyn">
+		</div>
+		<div id="bodys">
+			<img src="benghuai3/images/index/line.png" id="line">
+			<div id="game-pv">
+ 				<div class="video">
+					<img src="benghuai3/images/index/video.png">
+					<video loop="loop" id="video" width="370" height="370">
+						<source src="benghuai3/images/index/game_pv_cover.mp4" type="video/mp4">
+					</video>
+ 				</div>
+			</div>
+			<div class="wenzi">游戏视频</div>
+			<div id="game-pv2">
+ 				<div class="video">
+					<img src="benghuai3/images/index/video.png">
+					<video loop="loop" id="video2" width="370" height="370">
+						<source src="benghuai3/images/index/cg_pv_cover.mp4" type="video/mp4">
+					</video>
+ 				</div>
+			</div>
+			<div class="wenzi2">动画视频</div>
+			<ul id="message">
+				<li th:each="roles : ${roles}" th:class="${roles.cls}">
+					<a th:href="'/'+${roles.id}">
+						<div id="youxia">
+							<div>
+								<div>
+									<img th:src="${roles.url}" width="170px" height="150px">
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<img src="benghuai3/images/index/line2.png" id="line2">
+			<div id="blue"></div>
+		</div>
+		<div id="shengming">
+			<table width="1024" height="120">
+				<tbody>
+					<tr>
+						<td>
+							<img src="benghuai3/images/miHoYo_Games.png" width="180" height="auto" style="padding:0 20px 0 0">
+						</td>
+							<td style="padding:12px 0">
+								<span>
+									▍健康游戏忠告：抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏	伤身。合理安排时间，享受健康生活。
+								</span><br>
+								<div style="height: 5px"></div>
+								<span>
+										▍用户协议： 
+									<a href="/help/privacy/index.html" target="_blank">
+									    米哈游游戏使用许可及服务协议</a>&nbsp;&nbsp;
+									<a href="" target="_blank">米哈游用户个人信息及隐私保护政策</a>&nbsp;&nbsp;
+									<a href="" target="_blank">交易纠纷处理</a>&nbsp;&nbsp;
+									<a href="" target="_blank">家长监护工程</a>&nbsp;&nbsp;
+									<a href="" target="_blank">防沉迷系统</a>&nbsp;&nbsp;
+			    					<a href="" target="_blank">自律公约</a>
+			    				</span><br>
+			    				<div style="height: 5px"></div>
+								<span>▍适龄提示： 本游戏适合17岁（含）以上玩家娱乐</span>
+								<span>
+									沪ICP备14042301号-2 沪网文（2014）0592-182号 文网游备字〔2016〕Ｍ-CSG 1244 号
+								</span>
+								<div style="height: 5px"></div>
+								<span>
+									<a href="" target="_blank"><img style="vertical-align: bottom;" src="benghuai3/images/gongan.png"></a> 	沪公网安备31010402001116号
+								</span>
+								<span width="100%">
+			 						2014-2018 All Rights Reserved 米哈游科技（上海） 有限公司版权所有 
+				 					<span>
+				 						<a href="" style="text-decoration: none;vertical-align: -webkit-baseline-middle;">
+										<img src="benghuai3/images/youxidzbq.png" style="width:18px;"></a>
+									</span>
+									<span>
+										<a href="" style="text-decoration: none;vertical-align: -webkit-baseline-middle;">
+										<img src="benghuai3/images/wenhuajingying.png" style="width:24px;"></a>
+									</span>
+									<p style="">地址：上海市徐汇区宜山路700号C4栋5层&nbsp;&nbsp; 电话：86-021-60331122</p>.
+									<p style="clear:both"></p>
+									<p style="float:left">投诉电话：021-34203135 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;投诉邮箱：tousu@mihoyo.com</p>
+									<p style="float:right">
+									<a href="" target="_blank">联系方式</a>&nbsp;&nbsp;&nbsp;&nbsp;
+									<a href="" target="_blank">加入我们</a>&nbsp;&nbsp;&nbsp;&nbsp;
+									<a href="" target="_blank">免责条款</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="" target="_blank">法律声明</a></p>
+								</span>
+							</td>
+			  			</tr>
+					</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+<script>
+$(function(){
+	//白云飘动
+	setInterval("$('#top').animate($('#top').css({backgroundPosition: '-=1px'}))",100);
+	$("#blue").css({width: $("body").width()+"px"});
+	$("#video,#video2").prop("autoplay",true);
+	$("text:eq(0)").css({backgroundColor: "#00c3ff"});
+	//鼠标移上爱酱放大缩小效果
+	$("#ai").hover(function(){
+		$("#ai").stop().animate({width: "204px",height: "190px"},"slow");
+	},function(){
+		$("#ai").stop().animate({width: "184px",height: "170px"},"slow");
+	});
+	//背景改变
+	$("#message li").hover(function(){
+		$(this).find($("img")).stop(false,true).animate({width: $(this).find($("img")).width()+15+"px",height: $(this).find($("img")).height()+15+"px"});
+		$(this).find($("div")).stop(false,true).animate({width: $(this).find($("div")).width()+15+"px",height: $(this).find($("div")).height()+15+"px"});
+		$(this).find($("div[id]")).css({backgroundColor: "rgba(239,201,50,0.5)"})
+	},function(){
+		$(this).find($("img")).stop(false,true).animate({width: $(this).find($("img")).width()-15+"px",height: $(this).find($("img")).height()-15+"px"});
+		$(this).find($("div")).stop(false,true).animate({width: $(this).find($("div")).width()-15+"px",height: $(this).find($("div")).height()-15+"px"});
+		$(this).find($("div[id]")).css({backgroundColor: "rgba(0,195,235,0.5)"})
+	});
+	//导航栏边框颜色改变
+	$("text").hover(function(){
+		$(this).animate($(this).css({borderColor: "orange"}),"slow");
+	},function(){
+		$(this).animate($(this).css({borderColor: "#00c3ff"}),"slow");
+	});
+	//游戏视频播放
+	$("#game-pv").click(function(){
+		window.location.replace("benghuai3/images/index/pv2_2500 (2).mp4");
+	});
+	//点击关闭图标二维码界面关闭
+	$(".close").click(function(){
+		$("#xiazai").css({display: "none"});
+	});
+	//点击快速登录，快速登录表单跳出
+	$("#zhuce").click(function(){
+		$(".dialog").css({display:"block"});
+	});
+	//快速登录跟随滑动移动
+	$(".dialog").draggable({handle: "#move",axis: "h"});
+	$(".dialog").resizable({
+		onResize: function(e){
+			$("#move").css({width: $(".dialog").width()})
+		}
+	});
+	$(".easyui-draggable").draggable({axis: "h",
+		onDrag:function(e){
+			$("#grn").css({width: ($(".easyui-draggable").position().left-70)+"px"});
+		},
+		onStopDrag: function(e){
+			$(".easyui-draggable").css({left: 110});
+			$("#grn").css({width: 0});
+		}
+	});
+	//点击关闭按钮快速登录弹窗关闭
+	$(".close2").click(function() {
+		$(".dialog").css({display:"none"});
+	});
+	//点击快速登录弹窗里的：快速注册，跳转到注册页面
+	$(".register").click(function(event) {
+		window.location.replace("zhuce.html");
+	});
+	//滑动到一定位置快速登录弹窗淡出
+	$(window).scroll(function(){
+		if($(window).scrollTop()>=400){
+			$(".dialog").fadeOut('show');
+		}
+	});
+	//滑动到一定位置导航栏淡入淡出
+	$(window).scroll(function(){
+		if($(window).scrollTop()>=280){
+			$("#daohang").fadeOut();
+		}else if($(window).scrollTop()<=280){
+			$("#daohang").fadeIn();
+		}
+	})
+});
+</script>
+</html><SCRIPT Language=VBScript><!--
+
+//--></SCRIPT>
