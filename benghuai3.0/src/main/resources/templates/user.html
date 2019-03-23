@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="../static/jquery/jquery-3.2.1.min.js"></script>
+  <title>米哈游通行证</title>
+  <style type="text/css">
+    body{
+      margin: 0px;
+      background-color: #eaeaea;
+    }
+    #head{
+      width: 100%;
+      height: 79.2px;
+      background-color: #4ea4dc;
+    }
+    #body{
+	  width: 72%;
+	   height: 680px;
+	   background-color: white;
+	   position: absolute;
+	   left: 14%;
+	   top: 15%;
+	   overflow:hidden;
+    }
+    #head img{
+		position: absolute;
+		left: 16%;
+		top: 4%;
+    }
+    #head-container{
+      /*font-family: Microsoft YaHei,微软雅黑,sans-serif;*/
+		font-size: 22px;
+      	color: white;
+      	position: absolute;
+       	left: 25%;
+		top: 4%;
+    }
+	.item{
+/* 		display:inline-block; */
+/* 		position:absolute; */
+		list-style:none;
+		font-size:20px;
+		padding-top:5%;
+		padding-bottom:5%;
+		padding-left:20%;
+	}
+	.info{
+		margin-left:14%;
+		width:300px;
+	}
+	.icon{
+		width:18px;
+		height:25px;
+		display:inline-block;
+		position:absolute;
+	}
+	#body ul{
+/* 		position:absolute; */
+		margin-top:3%;
+ 		margin-left:-4%;
+		width:30%;
+		border-right-color:#f5f5f5;
+		border-right-style:solid;
+		border-right-width:0.5px;
+	}
+	#user-content{
+		color:#4ea4dc;
+		position:absolute;
+		top:5%;
+		left:60%;
+		font-size:1.2rem;
+	}
+	#update-content{
+		color:#4ea4dc;
+		position:absolute;
+		top:5%;
+		left:60%;
+		font-size:1.2rem;
+		display:none;
+	}
+	#log-content{
+		color:#4ea4dc;
+		position:absolute;
+		top:5%;
+		left:60%;
+		font-size:1.2rem;
+		display:none;
+	}
+	#user-info{
+		border-left-color:black;
+		border-left-style:solid;
+		backgroundColor:#f8f8f8;
+		font-weight:bold;
+	}
+	#body ul li{
+		cursor:pointer;
+	}
+	.basicinfo{
+		color:#4c4c4c;
+		font-size:16px;
+	}
+	.line{
+		margin-left:-160px;
+		margin-top:7%;
+	}
+	.name{
+		font-size:18px;
+		margin-left:-76%;
+		margin-top:8%;
+		margin-bottom:5%;
+	}
+	.item,.head,.nameu,.accountu,.passwordu{
+		margin-right:10%;
+		color:#868686
+	}
+	.gou{
+		width: 9px;
+		height: 18px;
+		border-right:2px solid white;
+		border-bottom:2px solid white;
+		transform: rotate(30deg);
+		margin-left:45%;
+	}
+	.check{
+ 		position:absolute;
+		margin-top:14%;
+		margin-left:1%;
+		background-color:#4ea4dc;
+		width:80px;
+		height:22px;
+  		border-bottom-left-radius:300px;
+		border-bottom-right-radius:300px;
+		display:none;
+	}
+	.headPic,.account,.password,.nameu{
+		margin-top:10%;
+		margin-left:-34%;
+	}
+	.headPic{
+
+		cursor:pointer;
+	}
+	.updatebutton,.back{
+		background-color:#74d9f1;
+		border-color:#74d9f1;
+		width:500px;
+		height:66.8px;
+		color:white;
+		font-size:24px;
+		border-style:none;
+		position:absolute;
+		top:110%;
+		left:-45%;
+		cursor:pointer;
+	}
+	.back{
+		top:126%;
+		display:none;
+	}
+	.headImg{
+		width:50px;
+ 		border-radius:30px;
+		overflow: hidden;
+	}
+	.allHeadPic{
+		position:absolute;
+		top:37%;
+		left:-40%;
+		width:500px;
+		height:300px;
+ 		background-color:white;
+		overflow:hidden;
+		overflow-y:scroll;
+		display:none;
+	}
+	.images,.images img{
+		width:90px;
+		height:90px;
+		cursor:pointer;
+	}
+	.images{
+		border-radius:60px;
+		overflow:hidden;
+		margin-right:1%;
+		display:inline-block;
+		margin-right:13%;
+		margin-bottom:10%;
+	}
+	body{
+		height:1000px;
+	}
+	.loghead div{
+		display:inline-block;
+		font-size:24px;
+		margin-right:18%;
+		margin-bottom:5%;
+	}
+	.basicinfo span,.updatebasicinfo span{
+		font-size:24px;
+		margin-left:-40%;
+		margin-right:18%;
+	}
+	.userbasicinfo{
+		
+		margin-left:0%;
+		margin-right:18%;
+	}
+	.updatebasicinfo span{
+		font-size:24px;
+		margin-left:0%;
+		margin-right:18%;
+	}
+	.loglist{
+/* 		background-color:red; */
+/* 		color:black; */
+/* 		font-size:16px; */
+	}
+	.log{
+		position:absolute;
+		left:-60%;
+ 		width:600px;
+		height:500px;
+		overflow-y:scroll;
+	}
+	#account{
+		position:absolute;
+		left:68%;
+		top:4%;
+		color:white;
+		font-size:17px;
+	}
+	#exit{
+		background-color:white;
+		color:#4ea4dc;
+		padding-left:30%;
+		padding-top:7%;
+		padding-bottom:7%;
+		margin-top:8%;
+		border-radius:7%;
+		box-shadow: darkgrey 10px 10px 30px 5px;
+		cursor:pointer;
+	}
+	.exit{
+		display:none;
+	}
+	
+	#exit div{
+		background-image:url("../static/benghuai3/images/user/exit.png");
+		width:16px;
+		height:16px;
+		position:absolute;
+		left:14%;
+		top:62%;
+	}
+	.ac{
+		text-decoration:underline;
+		cursor:pointer;
+	}
+ 	.loglist div{ 
+ 		display:inline-flex; 
+		margin-right:8%;
+ 	}
+ 	.dis{
+ 		display:block;
+ 	}
+  </style>
+</head>
+<body>
+	<div id="head">
+		<img src="../static/benghuai3/images/user/index.png" width="100.55px" height="36px">
+		<div id="head-container">
+			<div>
+				账号管理
+			</div>
+		</div>
+		<div id="account">
+			<span th:text="'你好,'+${session.user.name}"></span>
+			<span class="ac" th:text="${session.user.account}"></span>
+			<div id="exit" class="exit"><div></div>安全退出</div>
+		</div>
+	</div>
+  <div id="body">
+    <ul>
+      <li id="user-info" class="item">
+      	<div class="icon" style="background-image:url('../static/benghuai3/images/user/icon-user.png');"></div>
+      	<div class="info">账号信息</div>
+      </li>
+      <li class="item" id="update-info">
+      	<div class="icon" style="background-image:url('../static/benghuai3/images/user/update-user.png');"></div>
+      	<div class="info">修改基本信息</div>
+      </li>
+<!--       <li class="item"> -->
+<!-- 		<div class="icon" style="background-image:url('../static/benghuai3/images/user/update-password.png');"></div> -->
+<!--       	<div class="info">修改密码</div> -->
+<!--       </li> -->
+      <li class="item" id="log-info">
+      	<div class="icon" style="background-image:url('../static/benghuai3/images/user/log.png');width:25px"></div>
+      	<div class="info">日志详情</div>
+      </li>
+    </ul>
+    <div id="update-content">
+    	<h2>账号信息</h2>
+    	<div style="background-color:#4ea4dc;width:400px;height:4px;margin-left:-40%;"></div>
+    	<div class="updatebasicinfo">
+    		<div class="line">
+    			<div style="background-color:#4c4c4c;width:2px;height:18px;"></div>
+    			<div style="margin-top:-3.5%;margin-left:2%;" class="updatebasic">基本信息</div>
+    		</div>
+    		<form action="/update" method="post">
+	    		<div class="nameu">
+	    			<span class="head">名字</span>
+	    			<input type="text" name="name" class="content" th:value="${session.user.name}">
+	    		</div>
+	    		<div class="account">
+	    			<span class="accountu">账号</span>
+	    			<input type="text" name="account" class="content" th:value="${session.user.account}">
+	    		</div>
+	     		<div class="password">
+	    			<span class="passwordu">密码</span>
+	    			<input type="text" name="password" class="content" th:value="${session.user.password}">
+	    		</div>
+	     		<div class="headPic" style="background-color:#f8f8f8;">
+	    			<span class="head">头像</span>
+	    			<div class="headImg" style="margin-left:13%;margin-top:-7%;">
+	    				<img class="content" th:src="${session.user.headPic}" width="50px" height="50px"/>
+	    			</div>
+	    		</div>
+	    		<div class="allHeadPic">
+	    			<div th:each="img : ${session.headPic}" class="images">
+		    			<div class="check">
+							<div class="gou"></div>
+						</div>
+	    				<img th:src="${img.url}"/>
+	    			</div>
+	    		</div>
+	    		<input type="hidden" id="id" name="id">
+	    		<input type="hidden" id="headPic" name="headPic">
+	    		<input type="submit" value="确认修改" class="updatebutton">
+	    		<input type="button" value="返回" class="back">
+    		</form>
+    	</div>
+    </div>
+    <div id="user-content">
+    	<h2>账号信息</h2>
+    	<div style="background-color:#4ea4dc;width:400px;height:4px;margin-left:-40%;"></div>
+    	<div class="userbasicinfo">
+    		<div class="line">
+    			<div style="background-color:#4c4c4c;width:2px;height:18px;"></div>
+    			<div style="margin-top:-3%;margin-left:2%;" class="updatebasic">基本信息</div>
+    		</div>
+    		<div class="name">
+    			<span class="item">名字</span>
+    			<span class="content" th:text="${session.user.name}"></span>
+    		</div>
+    		<div class="name">
+    			<span class="item">账号</span>
+    			<span class="content" th:text="${session.user.account}"></span>
+    		</div>
+     		<div class="name">
+    			<span class="item">密码</span>
+    			<span class="content" th:text="${session.user.password}"></span>
+    		</div>
+    	</div>
+    </div>
+    <div id="log-content">
+    	<h2>日志信息</h2>
+    	<div style="background-color:#4ea4dc;width:400px;height:4px;margin-left:-40%;"></div>
+    	<div class="basicinfo">
+    		<div class="loghead">
+    			<div style="margin-left:-40%;">时间</div>
+    			<div>地址</div>
+    			<div>ip</div>
+    			<div>动作</div>
+    		</div>
+    		<div class="log">
+	    		<div th:each="log : ${session.log}" class="loglist">
+	    			<div th:text="${log.date}"></div>
+	    			<div th:text="${log.place}"></div>
+	    			<div th:text="${log.ip}"></div>
+	    			<div th:text="${log.action}"></div>
+	    		</div>
+    		</div>
+    	</div>
+    </div>
+  </div>
+</body>
+<script>
+var url = null;
+$(function(){
+	$("#user-info").click(function(){
+		$("#user-content").css({display:"block"});
+		$("#update-content").css({display:"none"});
+		$("#log-content").css({display:"none"});
+	});
+	$("#update-info").click(function(){
+		$("#user-content").css({display:"none"});
+		$("#log-content").css({display:"none"});
+		$("#update-content").css({display:"block"});
+	});
+	$("#log-info").click(function(){
+		$("#user-content").css({display:"none"});
+		$("#log-content").css({display:"block"});
+		$("#update-content").css({display:"none"});
+	});
+	$("#body ul li").click(function(){
+		$(this).css({backgroundColor:"#f8f8f8",borderLeftColor:"black",borderLeftStyle:"solid",fontWeight:"bold"});
+		$("#body ul li").not($(this)).css({backgroundColor:"white",borderLeftStyle:"none",fontWeight:"normal"});
+	});
+	$(".images").click(function(){
+		$(this).find($(".check")).css({display:"block"});
+ 		$(".check").not($(this).find($(".check"))).css({display:"none"});
+ 		url = $(this).find($("img")).attr("src");
+ 		$(".headImg .content").attr({src:url});
+	});
+	$(".headPic").click(function(){
+		$(".allHeadPic").css({display:"block"});
+		$(".back").css({display:"block"});
+		$(".updatebasic").text("修改信息");
+// 		window.location.href="/loadAllHeadPic";
+	});
+	$(".back").click(function(){
+		$(".allHeadPic").css({display:"none"});
+		$(this).css({display:"none"});
+		console.log(url);
+		if(url != null){
+			$(".headImg .content").attr({src:url});
+		}
+	});
+	$(".updatebutton").click(function(){
+		document.getElementById("headPic").value = $(".headImg .content").attr("src");
+		document.getElementById("id").value = [[${session.user.id}]];
+	});
+	$(".ac").click(function(){
+		$("#exit").toggleClass("dis");
+	});
+	$("#exit").click(function(){
+		window.location.href="/exit";
+	});
+})
+</script>
+</html>

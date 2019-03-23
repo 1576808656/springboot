@@ -1,11 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-	<link rel="shortcut icon" href="images/favicon.ico" href="../static/benghuai3/images/favicon.ico">
+	<link rel="shortcut icon" href="../static/benghuai3/images/favicon.ico">
 	<title>注册 -《崩坏3》-为世界上所有的美好而战</title>
-	<script src="jquery/jquery-3.2.1.min.js"></script>
-	<link rel="stylesheet" href="CSS/benghuai-zhuce.css">
+	<script src="../static/jquery/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" href="../static/benghuai3/CSS/benghuai-zhuce.css">
+	<style type="text/css">
+		#error{
+			color:red;font-size:10px;
+			position:absolute;
+			left:320px;
+			top:150px;
+		}
+		#user{
+			color:red;font-size:10px;
+			position:absolute;
+			left:320px;
+			top:150px;
+		}
+		#no{
+			color:red;font-size:12px;
+			position:absolute;
+			left:150px;
+		}
+	</style>
 </head>
 <body>
 	<!-- 导航栏 -->
@@ -16,59 +35,60 @@
 			<a href="tese.html"><text id="tese"><span>游戏特色</span></text></a>
 			<a href="gushi.html"><text id="bg"><span>故事背景</span></text></a>
 			<a href="bizhi.html"><text id="download"><span>壁纸下载</span></text></a>
-		<text id="zhuce"><span>快速登录</span></text>
+<!-- 		<text id="zhuce"><span>快速登录</span></text> -->
 	</div>
 	<!-- 快速登录弹窗 -->
 	<form action="UserServlet" method="post" accept-charset="utf-8">
 		<div class="dialog" style="width:400px;height:400px">
-		<img src="images/index/close-white.png" class="close2">
+		<img src="../static/benghuai3/images/index/close-white.png" class="close2">
 			<span class="short1">账号:&nbsp;<input type="text" id="text5"><br><br></span>
 			<span class="short2">密码:&nbsp;<input type="password" id="text6"><br><br></span>
-				<img src="images/index/section_4_button.png" class="register2"><br><br>
+				<img src="../static/benghuai3/images/index/section_4_button.png" class="register2"><br><br>
 		<br><br>
-			<img src="images/index/section_3_button.png" class="button">
+			<img src="../static/benghuai3/images/index/section_3_button.png" class="button">
 		</div>
 	</form>
 	<!-- 页面背景图片 -->
-	<img src="images/index/qyn.png" class="people">
+	<img src="../static/benghuai3/images/index/qyn.png" class="people">
 	<div class="personae">
 		<div id="Ptitle">请选择为您作战的少女:</div>
-		<div id="POD1" class="Simg"><img src="images/zhuce/P1.png" alt="" id="PO1"></div>
-		<div id="POD2" class="Simg"><img src="images/zhuce/P2.png" alt="" id="PO2"></div>
-		<div id="POD3" class="Simg"><img src="images/zhuce/P3.png" alt="" id="PO3"></div>
-		<div id="POD4" class="Simg"><img src="images/zhuce/P4.png" alt="" id="PO4"></div>
-		<div id="POD5" class="Simg"><img src="images/zhuce/P5.png" alt="" id="PO5"></div>
+		<div id="POD1" class="Simg"><img src="../static/benghuai3/images/headPic/a.png" alt="" id="PO1"></div>
+		<div id="POD2" class="Simg"><img src="../static/benghuai3/images/headPic/b.png" alt="" id="PO2"></div>
+		<div id="POD3" class="Simg"><img src="../static/benghuai3/images/headPic/c.png" alt="" id="PO3"></div>
+		<div id="POD4" class="Simg"><img src="../static/benghuai3/images/headPic/d.png" alt="" id="PO4"></div>
+		<div id="POD5" class="Simg"><img src=../static/benghuai3/images/headPic/e.png alt="" id="PO5"></div>
 		<div id="Bimg">
 		</div>
 	</div>
 	<!-- 注册表单 -->
 	<div class="register">
 		<form action="UserServlet" method="post" accept-charset="utf-8" class="form">
+			<p id="no"></p>
 			<span class="name">姓名:&nbsp;<input type="text" id="text1" class="text">
-				<img src="images/index/video.png" class="video1">
+				<img src="../static/benghuai3/images/index/video.png" class="video1">
 			</span>
 			<br><br>
 			<span class="account">账号:&nbsp;<input type="text" id="text2" class="text">
-				<img src="images/index/video.png" class="video2">
-			</span>
+				<img src="../static/benghuai3/images/index/video.png" class="video2">
+			</span><p id="user" th:text="${session.isUser}"></p>
 			<br><br>
 			<span class="pwd">密码:&nbsp;<input type="password" id="text3" class="text">
-				<img src="images/index/video.png" class="video3"> 
-			</span>
+				<img src="../static/benghuai3/images/index/video.png" class="video3"> 
+			</span><p id="error" th:text="${errors}"></p>
 			<br><br>
 			<span class="pwd2">确认密码:&nbsp;<input type="password" id="text4" class="text">
-				<img src="images/index/video.png" class="video4">
+				<img src="../static/benghuai3/images/index/video.png" class="video4">
 			</span>
 			<br><br>
 				<div class="Rest">点击注册</div>
-				<div class="Login">快速登录</div>
+<!-- 				<div class="Login">快速登录</div> -->
 			<br><br>
 		</form>
 	</div>
 	<div id="top">
 	</div>
 </body>
-<script>
+<script th:inline="javascript">
 $(function(){
 	//白云飘动效果
 	setInterval("$('#top').animate($('#top').css({backgroundPosition: '-=1px'}))",100);
@@ -119,20 +139,22 @@ $(function(){
 		$(this).css({borderColor:"#008edf"});
 		$(".Simg").not(this).css({borderColor:"white"});
 		var a=$(this).html().slice(24,25);
+		$(this).addClass("selected");
+		$(".Simg").not($(this)).removeClass("selected");
 		if(a==1){
-			$("#Bimg").html("<img src='images/zhuce/P1(1).png'>");
+			$("#Bimg").html("<img src='../static/benghuai3/images/zhuce/P1(1).png'>");
 			$("#Bimg img").fadeOut(0).delay(50).fadeIn(1000);
 		}else if(a==2){
-			$("#Bimg").html("<img src='images/zhuce/P2(1).png'>");
+			$("#Bimg").html("<img src='../static/benghuai3/images/zhuce/P2(1).png'>");
 			$("#Bimg img").fadeOut(0).delay(50).fadeIn(1000);
 		}else if(a==3){
-			$("#Bimg").html("<img src='images/zhuce/P3(1).png'>");
+			$("#Bimg").html("<img src='../static/benghuai3/images/zhuce/P3(1).png'>");
 			$("#Bimg img").fadeOut(0).delay(50).fadeIn(1000);
 		}else if(a==4){
-			$("#Bimg").html("<img src='images/zhuce/P4(1).png'>");
+			$("#Bimg").html("<img src='../static/benghuai3/images/zhuce/P4(1).png'>");
 			$("#Bimg img").fadeOut(0).delay(50).fadeIn(1000);
 		}else if(a==5){
-			$("#Bimg").html("<img src='images/zhuce/P5(1).png'>");
+			$("#Bimg").html("<img src='../static/benghuai3/images/zhuce/P5(1).png'>");
 			$("#Bimg img").fadeOut(0).delay(50).fadeIn(1000);
 		}
 	});
@@ -149,6 +171,35 @@ $(function(){
 		$(".Rest").css({borderColor:"#00c3ff"});
 	}, function() {
 		$(".Rest").css({borderColor:"white"});
+	});
+	$(".Rest").click(function(){
+		console.log($("#text2").val());
+		var url = $(".selected").find($("img")).attr("src");
+		//判断是否为空
+		if($("#text1").val().length<=0 || $("#text2").val().length<=0
+				|| $("#text3").val().length<=0 || $("#text4").val().length<=0) {
+			$("#no").text("请完整填写注册信息");
+			return;
+		}
+		
+// 		window.location.href="/existUser"+$("#text2").val();
+		console.log("session"+[[${session.isUser}]]);
+		//判断两次密码是否相同
+		if($("#text3").val()!=$("#text4").val()){
+ 			window.location.href="/errors";
+ 			return;
+		}else{
+			$("#error").val(null);
+			console.log("/register"+$("#text1").val()+$("#text2").val()+$("#text3").val()+$("#text4").val()+url);
+			$.post("/register",{
+				name:$("#text1").val(),
+				account:$("#text2").val(),
+				password:$("#text3").val(),
+				headPic:url
+			},function(){
+		 		window.location.href="/userinfo";
+			});
+		}
 	});
 	$(".Login").hover(function() {
 		$(".Login").css({borderColor:"#00c3ff"});

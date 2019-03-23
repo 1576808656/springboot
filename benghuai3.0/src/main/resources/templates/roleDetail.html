@@ -2,9 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<script src="jquery/jquery-3.2.1.min.js"></script>
-	<link rel="shortcut icon" href="../static/benghuai3/images/favicon.ico">
-	<link rel="stylesheet" href="benghuai3/CSS/yayi.css">
+	<script src="../static/jquery/jquery-3.2.1.min.js"></script>
+	<link rel="shortcut icon" href="../static/../static/benghuai3/images/favicon.ico">
+	<link rel="stylesheet" href="../static/../static/benghuai3/CSS/yayi.css">
 	<title th:text="${roleinfo.type}"></title>
 </head>
 <body>
@@ -25,7 +25,7 @@
 			<img th:src="${roleinfo.pic}" id="c1">
 		</div>
 		<div id="catalog">
-			<img src="benghuai3/images/jieshao/left_arrow.png" id="lefts">
+			<img src="../static/benghuai3/images/jieshao/left_arrow.png" id="lefts">
 			<div id="prevs">
 				<a th:href="'/prev'+${roleinfo.id}">
 					<div>
@@ -42,11 +42,11 @@
 					</div>
 				</a>
 			</div>
-			<img src="benghuai3/images/jieshao/right_arrow.png" id="rights">
+			<img src="../static/benghuai3/images/jieshao/right_arrow.png" id="rights">
 		</div>
 		<div id="id-card">
 			<div id="air">
-				<img src="benghuai3/images/jieshao/in_the_air.jpg" alt="">
+				<img src="../static/benghuai3/images/jieshao/in_the_air.jpg" alt="">
 			</div>
 			<ul id="name">
 				<li th:text="'姓名: '+${roleinfo.name}"></li>
@@ -73,7 +73,7 @@
 			<tbody>
 				<tr>
 					<td>
-						<img src="benghuai3/images/miHoYo_Games.png" width="180" height="auto" style="position: relative;left: 120px">
+						<img src="../static/benghuai3/images/miHoYo_Games.png" width="180" height="auto" style="position: relative;left: 120px">
 					</td>
 					<td style="padding:12px 0" class="shengming">
 						<span>
@@ -99,18 +99,18 @@
 						</p>
 						<p>
 							<span>
-								<a href="" target="_blank"><img style="vertical-align: bottom;" src="benghuai3/images/gongan.png"></a> 沪公网安备31010402001116号
+								<a href="" target="_blank"><img style="vertical-align: bottom;" src="../static/benghuai3/images/gongan.png"></a> 沪公网安备31010402001116号
 							</span>
 						</p>
 						<span width="100%" class="alls">
 		 					2014-2018 All Rights Reserved 米哈游科技（上海） 有限公司版权所有 
 			 				<span>
 			 					<a href="" style="text-decoration: none;vertical-align: -webkit-baseline-middle;">
-								<img src="benghuai3/images/youxidzbq.png" style="width:18px;"></a>
+								<img src="../static/benghuai3/images/youxidzbq.png" style="width:18px;"></a>
 							</span>
 							<span>
 								<a href="" style="text-decoration: none;vertical-align: -webkit-baseline-middle;">
-								<img src="benghuai3/images/wenhuajingying.png" style="width:24px;"></a>
+								<img src="../static/benghuai3/images/wenhuajingying.png" style="width:24px;"></a>
 							</span>
 							<p style="float:left">地址：上海市徐汇区宜山路700号C4栋5层&nbsp;&nbsp; 电话：86-021-60331122</p>.
 							<p style="clear:both"></p>

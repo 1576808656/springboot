@@ -13,7 +13,7 @@ body{
 #daohang{
 	position: fixed;
 	top: 30px;
-	left: 280px;
+	left: 260px;
 	display: block;
 	z-index: 99;
 }
@@ -335,7 +335,7 @@ a{
 	position: fixed;
 	background-image: url(../images/index/PC_bt.jpg);
 	background-position: -240px;
-	top: 390px;
+	top: 300px;
 	z-index: 999;
 	display: inline-flex;
 }
@@ -375,7 +375,7 @@ a{
 .g{
 	font-size: 24px;
 	color: white;
-	margin-top: -9px;
+	margin-top: -24px;
 }
 p{
 	margin-left: 90px;
